@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Edit note Meet up with An</h1>
+
+  <form>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox">
+        Done
+      </label>
+    </div>
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" class="form-control" value="Meet up with An">
+    </div>
+    <div class="form-group">
+      <label>Date</label>
+      <input type="text" class="form-control" value="03.05.2016">
+    </div>
+    <div class="form-group">
+      <label>Time</label>
+      <input type="text" class="form-control" value="15.00">
+    </div>  
+    <div class="form-group">
+      <label>Place</label>
+      <input type="text" class="form-control" value="Helsinki, Kumpula">
+    </div>
+    <div class="form-group">
+      <label>Status</label>
+      <input type="text" class="form-control" value="undone">
+    </div>    
+    <div class="form-group">
+      <label>Priority</label>
+      <input type="text" class="form-control" value="5">
+    </div>
+    <div class="form-group">
+      <label>Classification</label>
+      <input type="text" class="form-control" value="People">
+    </div>
+    <div class="form-group">
+      <label>Note</label>
+      <textarea class="form-control">        
+      </textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Save changes</button>
+      <a href="/tsoha/notes " class="btn btn-success">Back to notes</a>
+    </div>
+  </form>
+{% endblock %}
