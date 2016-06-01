@@ -1,10 +1,16 @@
-# Tietokantasovelluksen esittelysivu
+# Muistilista
+Tietokantasovellus harjoitustyö
 
-Yleisiä linkkejä:
+##### Aiheen kuvaus
+[kuvaus](http://advancedkittenry.github.io/suunnittelu_ja_tyoymparisto/aiheet/Muistilista.html)
 
-* [Linkki sovellukseeni](http://samukaup.users.cs.helsinki.fi/tsoha/notes)
-* [Linkki dokumentaatiooni](https://github.com/Rubiini/Muistilista/blob/master/doc/Tsohaviikko2.pdf)
+##### Sovelluksen sivujen suunnitelmia
+* [etusivu](http://samukaup.users.cs.helsinki.fi/tsoha/login.html)
+* [listaus-sivu](http://samukaup.users.cs.helsinki.fi/tsoha/notes.html)
+* [muokkaus-sivu](http://samukaup.users.cs.helsinki.fi/tsoha/edit.html)
+* [esittelysivu](http://samukaup.users.cs.helsinki.fi/tsoha/show.html)
 
-## Työn aihe
+##### Dokumentaatio
+[doc](doc/Tsohaviikko2.pdf)
 
-Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkittenry.github.io/suunnittelu_ja_tyoymparisto/aiheet/muistilista.html) 
+
