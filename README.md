@@ -1,4 +1,4 @@
-# Muistilista
+# Notebook
 Tietokantasovellus harjoitustyö
 
 ##### Aiheen kuvaus
