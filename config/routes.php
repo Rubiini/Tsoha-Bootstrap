@@ -35,3 +35,25 @@ $routes->get('/note/edit', function() {
 $routes->get('/login', function() {
     HelloWorldController::login();
 });
+
+$routes->get('/', function(){
+    NoteController::index();
+});
+
+$routes->get('/note', function(){
+    NoteController::index();
+});
+
+$routes->get('/note/:id', function($id){
+    NoteController::show($id);
+});
+
+$routes->post('/note', function(){
+  NoteController::store();
+});
+
+$routes->get('/note/new', function(){
+  NoteController::create();
+});
+
+
