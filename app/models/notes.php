@@ -14,7 +14,7 @@ class Notes extends BaseModel {
     }
 
     public static function all() {
-        $query = DB::connection()->prepare('SELECT * FROM Notes');
+        $query = DB::connection()->prepare('SELECT * FROM notes');
         $query->execute();
         $rows = $query->fetchAll();
         $notes = array();
@@ -32,6 +32,7 @@ class Notes extends BaseModel {
                 'customer' => $row['customer']
             ));
         }
+        return $notes;
     }
     
     public static function find($id) {
@@ -57,5 +58,12 @@ class Notes extends BaseModel {
         
         return null;
     }
+    
+    public function save() {
+	  $query = DB::connection()->prepare('insert into notes (title, date_, time_, place, status, priority, note) values (:title, :date_, :time_, :place, :status, :priority, :note returning id');
+	  $query>execute(array('title' => $this->title, 'date_' => $this->date_, 'time_' => $this->time_, 'place' => $this->place, 'status' => $this->status, 'priority' => $this->priority, 'note' => $this->note,));
+	  $row = $query->fetch();
+	  $this->id = $row['id'];
+	}
 }   
     

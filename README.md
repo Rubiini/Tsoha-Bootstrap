@@ -11,6 +11,6 @@ Tietokantasovellus harjoitustyö
 * [esittelysivu](http://samukaup.users.cs.helsinki.fi/tsoha/note/show)
 
 ##### Dokumentaatio
-[doc](doc/Tsohaviikko2.pdf)
+[doc](doc/Tsohaviikko3.pdf)
 
 
