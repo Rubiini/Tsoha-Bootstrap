@@ -16,6 +16,7 @@
         <th>Status</th>
         <th>Priority</th>
         <th>Classification</th>
+        <th>Note</th>
       </tr>
     </thead>
 
@@ -43,6 +44,7 @@
               {{classification.title}} <br>
             {% endfor %}
           </td>
+          <td>{{note.note}}
           <td><a class="btn btn-default btn-sm" href="{{base_path}}/note/{{note.id}}/edit">Edit</a></td>
         </tr>
       {% endfor %}
