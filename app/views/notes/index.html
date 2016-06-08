@@ -28,11 +28,11 @@
           <td>{{note.time_}}</td>
           <td>{{note.place}}</td>
           <td>
-              {% if note.status == done %}
+              {% if note.status == 'Done' %}
                 <label class="label label-success">Done
-              {% elseif note.status == inProgress %}
+              {% elseif note.status == 'In progress' %}
                 <label class="label label-warning">In progress
-              {% elseif note.status == notStarted %}      
+              {% elseif note.status == 'Not started' %}      
                 <label class="label label-danger">Not started 
               {% else %}
                 <label class="label label-default">No status

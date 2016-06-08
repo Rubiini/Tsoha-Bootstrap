@@ -14,7 +14,7 @@ class NoteController extends BaseController {
 
     public static function show($id) {
         $note = Notes::find($id);
-        View::make('notes/show.html', array('note' => $note));
+        View::make('notes/show.html', array('notes' => $note));
     }
 
     public static function store() {
