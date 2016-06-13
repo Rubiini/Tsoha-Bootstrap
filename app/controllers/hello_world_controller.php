@@ -1,6 +1,6 @@
 <?php
 
-require 'app/models/Notes.php';
+require 'app/models/notes.php';
 class HelloWorldController extends BaseController {
 
     public static function index() {
@@ -10,11 +10,18 @@ class HelloWorldController extends BaseController {
 
     public static function sandbox() {
         // Testaa koodiasi täällä
-        $koira = Notes::find(1);
-        $notes = Notes::all();
+        $test = new Notes(array(
+            'title' => '9',
+            'date_' => '9-12-1930',
+            'time_' => '23:25',
+            'place' => '----1',
+            'status' => 'asdjaskljkdj',
+            'priority' => '★',
+            'note' => 'this is a test'
+        ));
         
-        Kint::dump($notes);
-        Kint::dump($koira); 
+        $errors = $test->errors();
+        Kint::dump($errors);
     }
 
     public static function classifications() {

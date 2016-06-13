@@ -1,5 +1,7 @@
 <?php
 
+//suunnitelma
+
 $routes->get('/', function() {
     HelloWorldController::index();
 });
@@ -32,9 +34,21 @@ $routes->get('/suunnitelma/note/edit', function() {
     HelloWorldController::note_edit();
 });
 
-$routes->get('/suunnitelma/login', function() {
+$routes->get('/suunnitelmat/login', function() {
     HelloWorldController::login();
 });
+
+// login 
+
+$routes->get('/login', function() {
+    CustomerController::login();
+});
+
+$routes->post('/login', function() {
+    CustomerController::handle_login();
+});
+
+//note
 
 $routes->get('/', function(){
     NoteController::index();
@@ -54,6 +68,18 @@ $routes->get('/note/:id', function($id){
 
 $routes->post('/note', function(){
     NoteController::store();
+});
+
+$routes->get('/note/:id/edit', function($id){
+    NoteController::edit($id);
+});
+
+$routes->post('/note/:id/edit', function($id){
+    NoteController::update($id);
+});
+
+$routes->post('/note/:id/destroy', function($id){
+    NoteController::destroy($id);
 });
 
 
