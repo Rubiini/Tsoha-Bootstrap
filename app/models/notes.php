@@ -7,11 +7,19 @@
  */
 class Notes extends BaseModel {
 
+    public $validators;
     public $id, $title, $date_, $time_, $place, $status, $priority, $note, $customer;
 
     public function __construct($attributes) {
         parent::__construct($attributes);
-        $this->validators = array('validate_date', 'validate_time', 'validate_title', 'validate_place', 'validate_status', 'validate_priority', 'validate_note');
+        $this->validators = array(
+            'validate_date',
+            'validate_time',
+            'validate_title', 
+            'validate_place', 
+            'validate_status', 
+            'validate_priority', 
+            'validate_note');
     }
 
     public static function all() {
@@ -76,7 +84,7 @@ class Notes extends BaseModel {
     }
     
     public function update() {
-        $query = DB::connection()->prepare('UPDATE Notes SET title = :title, date_ = :date_, time_ = :time_, place = :place, status = :status, priority = :priority, note = :note WHERE id = :id');
+        $query = DB::connection()->prepare('UPDATE notes SET title = :title, date_ = :date_, time_ = :time_, place = :place, status = :status, priority = :priority, note = :note WHERE id = :id');
         $query->execute(array(
             'id' => $this->id, 
             'title' => $this->title, 
@@ -95,38 +103,31 @@ class Notes extends BaseModel {
     }
 
     public function validate_date() {
-        $errors = $this->valid_date($this->date_);
-        return $errors;
+        return parent::valid_date($this->date_);
     }
 
     public function validate_time() {
-        $errors = $this->valid_time($this->time_);
-        return $errors;
+        return parent::valid_time($this->time_);
     }
 
     public function validate_title() {
-        $errors = $this->validate_string_length($this->title, 'title', 2, 80);
-        return $errors;
+        return parent::validate_string_length($this->title, 'title', 2, 80);
     }
 
     public function validate_place() {
-        $errors = $this->validate_string_length($this->place, 'place', 0, 50);
-        return $errors;
+        return parent::validate_string_length($this->place, 'place', 0, 50);
     }
 
     public function validate_status() {
-        $errors = $this->validate_string_length($this->status, 'status', 0, 20);
-        return $errors;
+        return parent::validate_string_length($this->status, 'status', 0, 20);
     }
 
     public function validate_priority() {
-        $errors = $this->validate_string_length($this->priority, 'priority', 0, 30);
-        return $errors;
+        return parent::validate_string_length($this->priority, 'priority', 0, 30);
     }
 
     public function validate_note() {
-        $errors = $this->validate_string_length($this->note, 'note', 0, 500);
-        return $errors;
+        return parent::validate_string_length($this->note, 'note', 0, 500);
     }
 
 }

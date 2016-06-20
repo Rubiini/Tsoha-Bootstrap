@@ -14,10 +14,12 @@
   <p><strong>Priority:</strong> {{notes.priority}}</p>
   <p><strong>Note:</strong> {{notes.note}}</p>
   
-  <p>
-      <a class="btn btn-primary" href="{{base_path}}/note/{{notes.id}}/edit" role="button">Edit</a>
-      <a class="btn btn-primary" href="{{base_path}}/note/{{notes.id}}/destroy" role="button">Delete</a>
-  </p> 
+  
+  <a class="btn btn-primary" href="{{base_path}}/note/{{notes.id}}/edit" role="button">Edit</a>
+  <form method="post" action="{{base_path}}/note/{{notes.id}}/destroy" style="display: inline-block;">
+      <button type="submit" class="btn btn-danger">Delete</button>
+  </form>
+   
   
 
 {% endblock %}

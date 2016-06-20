@@ -11,9 +11,9 @@ class HelloWorldController extends BaseController {
     public static function sandbox() {
         // Testaa koodiasi täällä
         $test = new Notes(array(
-            'title' => '9',
+            'title' => 'okasd',
             'date_' => '9-12-1930',
-            'time_' => '23:25',
+            'time_' => '23',
             'place' => '----1',
             'status' => 'asdjaskljkdj',
             'priority' => '★',

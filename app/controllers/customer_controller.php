@@ -8,7 +8,7 @@ class CustomerController extends BaseController{
   public static function handle_login(){
     $params = $_POST;
 
-    $user = User::authenticate($params['username'], $params['password']);
+    $user = Customer::authenticate($params['username'], $params['password']);
 
     if(!$user){
       View::make('customer/login.html', array('error' => 'Incorrect username or password!', 'username' => $params['username']));

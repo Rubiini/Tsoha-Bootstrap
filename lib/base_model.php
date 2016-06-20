@@ -25,43 +25,31 @@ class BaseModel {
 
         return $errors;
     }
-
+    
     public function validate_string_length($string, $attribute, $min, $max) {
         $errors = array();
-        if (strlen($string) < $min) {
-            $errors[] = $attribute . ' length must be between ' . $min . ' and ' . $max . ' characters!';
+        if (strlen($string) < $min || $string > $max) {
+             $errors[] = $attribute . ' length must be between ' . $min . ' and ' . $max . ' characters!';
         }
-
-        if (strlen($string) > $max) {
-            $errors[] = $attribute . ' length must be between ' . $min . ' and ' . $max . ' characters!';
-        }
-
         return $errors;
+        
     }
 
     public function valid_date($date) {
         $errors = array();
         $obj = DateTime::createFromFormat('d-m-Y', $date);
-        if ($date == '' || $date == null) {
-            $errors[] = 'Date cannot be empty!';
-        }
         if (!$obj) {
-            return $errors[] = 'Date input form has to be "D-M-Y"';
+             $errors[] = 'Date input form has to be "D-M-Y"';
         }
-
         return $errors;
     }
 
     public function valid_time($time) {
         $errors = array();
         $obj = DateTime::createFromFormat('H:i', $time);
-        if ($time == '' || $time == null) {
-            $errors[] = 'Date cannot be empty!';
-        }
         if (!$obj) {
-            return $errors[] = 'Time input form has to be "HH:MM"';
+            $errors[] = 'Time input form has to be "HH:MM"';
         }
         return $errors;
     }
-
 }

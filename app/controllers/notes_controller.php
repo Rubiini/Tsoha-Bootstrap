@@ -32,7 +32,7 @@ class NoteController extends BaseController {
         $errors = $note->errors();
 
         
-        if (count($errors == 0)) {
+        if (count($errors) == 0) {
             $note->save();
             Redirect::to('/note/' . $note->id, array('message' => 'Note has been added to your notebook!'));
         } else {
@@ -86,6 +86,6 @@ class NoteController extends BaseController {
         $note = new Notes(array('id' => $id));
         $note->destroy();
 
-        Redirect::to('/notes', array('message' => 'Note has been deleted successfully!'));
+        Redirect::to('/note', array('message' => 'Note has been deleted successfully!'));
     }
 }

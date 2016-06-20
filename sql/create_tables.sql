@@ -14,7 +14,7 @@ create table notes(
         status varchar(20),
 	priority varchar(30),
         note varchar(500),
-        customer integer references customer(id)
+        customer integer references customer(id) on delete cascade
 );
 
 create table classification(

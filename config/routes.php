@@ -2,10 +2,6 @@
 
 //suunnitelma
 
-$routes->get('/', function() {
-    HelloWorldController::index();
-});
-
 $routes->get('/hiekkalaatikko', function() {
     HelloWorldController::sandbox();
 });
@@ -58,6 +54,10 @@ $routes->get('/note/new', function(){
     NoteController::create();
 });
 
+$routes->post('/note/:id/destroy', function($id){
+    NoteController::destroy($id);
+});
+
 $routes->get('/note', function(){
     NoteController::index();
 });
@@ -78,9 +78,7 @@ $routes->post('/note/:id/edit', function($id){
     NoteController::update($id);
 });
 
-$routes->post('/note/:id/destroy', function($id){
-    NoteController::destroy($id);
-});
+
 
 
 
