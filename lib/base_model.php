@@ -37,18 +37,18 @@ class BaseModel {
 
     public function valid_date($date) {
         $errors = array();
-        $obj = DateTime::createFromFormat('d-m-Y', $date);
+        $obj = DateTime::createFromFormat('Y-m-d', $date);
         if (!$obj) {
-             $errors[] = 'Date input form has to be "D-M-Y"';
+             $errors[] = 'Date input form has to be "Y-m-d"';
         }
         return $errors;
     }
 
     public function valid_time($time) {
         $errors = array();
-        $obj = DateTime::createFromFormat('H:i', $time);
+        $obj = DateTime::createFromFormat('H:i:s', $time);
         if (!$obj) {
-            $errors[] = 'Time input form has to be "HH:MM"';
+            $errors[] = 'Time input form has to be "H:M:S"';
         }
         return $errors;
     }

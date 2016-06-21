@@ -49,12 +49,6 @@ class NoteController extends BaseController {
         View::make('notes/edit.html', array('attributes' => $note));
     }
 
-    public function save() {
-        $query = DB::connection()->prepare('INSERT INTO Notes (title, date_, time_, place, status, priority, classification, note) VALUES (:title, :date_, :time_, :place, :status, :priority, :classification, :note) RETURNING id');
-        $query->execute(array('title' => $this->title, 'date_' => $this->date_, 'time_' => $this->time_, 'place' => $this->place, 'status' => $this->status, 'priority' => $this->priority, 'classification' => $this->classification, 'note' => $this->note));
-        $row = $query->fetch();
-        $this->id = $row['id'];
-    }
 
     public static function update($id) {
         $params = $_POST;
@@ -78,7 +72,7 @@ class NoteController extends BaseController {
         } else {
             $note->update();
 
-            Redirect::to('/notes/' . $note->id, array('message' => 'Note has been edited successfully!'));
+            Redirect::to('/note' . $note->id, array('message' => 'Note has been edited successfully!'));
         }
     }
 

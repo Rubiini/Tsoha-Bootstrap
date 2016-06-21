@@ -23,8 +23,8 @@ class Notes extends BaseModel {
     }
 
     public static function all() {
-        $query = DB::connection()->prepare('SELECT * FROM notes');
-        $query->execute();
+        $query = DB::connection()->prepare('SELECT * FROM notes where customer = :customer');
+        $query->execute(array('customer' => $_SESSION['user']));
         $rows = $query->fetchAll();
         $notes = array();
 
@@ -69,7 +69,7 @@ class Notes extends BaseModel {
     }
 
     public function save() {
-        $query = DB::connection()->prepare('insert into notes (title, date_, time_, place, status, priority, note) values (:title, :date_, :time_, :place, :status, :priority, :note) returning id');
+        $query = DB::connection()->prepare('insert into notes (title, date_, time_, place, status, priority, note, customer) values (:title, :date_, :time_, :place, :status, :priority, :note, :customer) returning id');
         $query->execute(array(
             'title' => $this->title, 
             'date_' => $this->date_, 
@@ -77,7 +77,8 @@ class Notes extends BaseModel {
             'place' => $this->place, 
             'status' => $this->status, 
             'priority' => $this->priority, 
-            'note' => $this->note
+            'note' => $this->note,
+            'customer' => BaseController::get_user_logged_in()->id
         ));
         $row = $query->fetch();
         $this->id = $row['id'];
@@ -94,12 +95,17 @@ class Notes extends BaseModel {
             'status' => $this->status, 
             'priority' => $this->priority, 
             'note' => $this->note
+                
         ));
     }
 
     public function destroy() {
-        $query = DB::connection()->prepare('DELETE FROM Notes WHERE id = :id');
+        $classQuery = DB::connection()->prepare('DELETE FROM classifications WHERE notes = :notes');
+	$classQuery->execute(array('notes' => $this->id));
+        
+        $query = DB::connection()->prepare('DELETE FROM notes WHERE id = :id');
         $query->execute(array('id' => $this->id));
+        
     }
 
     public function validate_date() {

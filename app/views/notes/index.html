@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>User X notebook</h1>
+{% if user_logged_in %}
+    <h1>{{user_logged_in.username}}'s notebook</h1>
+{% endif %}
 
   <p>
     <a href="{{base_path}}/note/new" class="btn btn-success">Add Note</a>
