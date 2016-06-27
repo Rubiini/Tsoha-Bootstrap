@@ -4,13 +4,17 @@ Tietokantasovellus harjoitustyö
 ##### Aiheen kuvaus
 [kuvaus](http://advancedkittenry.github.io/suunnittelu_ja_tyoymparisto/aiheet/Muistilista.html)
 
-##### Sovelluksen sivujen suunnitelmia
-* [etusivu](http://samukaup.users.cs.helsinki.fi/tsoha/login)
-* [listaus-sivu](http://samukaup.users.cs.helsinki.fi/tsoha/notes)
-* [muokkaus-sivu](http://samukaup.users.cs.helsinki.fi/tsoha/note/edit)
-* [esittelysivu](http://samukaup.users.cs.helsinki.fi/tsoha/note/show)
-
 ##### Dokumentaatio
-[doc](doc/Tsohaviikko2.pdf)
+[doc](doc/Tsohpalautus.pdf)
+
+##### Sovelluksen linkki
+* [etusivu](http://samukaup.users.cs.helsinki.fi/tsoha/)
+* [kirjautumis-sivu](http://samukaup.users.cs.helsinki.fi/tsoha/login)
+
+##### Testi käyttäjätunnus ja salasana
+
+* Username: user
+* Password: user
+
 
 
