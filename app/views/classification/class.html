@@ -11,15 +11,17 @@
   <table class="table table-striped table-bordered">
     <thead>
       <tr>
-        <th>Classification</th>
+        <th>Title</th>
       </tr>
     </thead>
 
     <tbody>
+    {% for class in classification %}    
       <tr>
-        <td><a href="{{base_path}}/classification/{{classification.id}}">{{classification.title}}</a></td>
-        <th><a class="btn btn-default btn-sm" href="{{base_path}}/classification/{{classification.id}}/edit">Edit</a></th>
+        <td><a href="{{base_path}}/classification/{{class.id}}">{{class.title}}</a></td>
+        <th><a class="btn btn-default btn-sm" href="{{base_path}}/classification/{{class.id}}/edit">Edit</a></th>
       </tr>
     </tbody>
+    {% endfor %}
   </table>
 {% endblock %}

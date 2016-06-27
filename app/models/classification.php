@@ -68,8 +68,8 @@ class Classification extends BaseModel {
     }
 
     public function destroy() {
-        $classQuery = DB::connection()->prepare('DELETE FROM notes WHERE classification = :classification');
-	$classQuery->execute(array('classification' => $this->id));
+        //$classQuery = DB::connection()->prepare('DELETE FROM notes WHERE classification = :classification');
+	//$classQuery->execute(array('classification' => $this->id));
         
         $query = DB::connection()->prepare('DELETE FROM classification WHERE id = :id');
         $query->execute(array('id' => $this->id));

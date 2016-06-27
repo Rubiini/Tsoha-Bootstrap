@@ -87,7 +87,7 @@ class Notes extends BaseModel {
     public function update() {
         $query = DB::connection()->prepare('UPDATE notes SET title = :title, date_ = :date_, time_ = :time_, place = :place, status = :status, priority = :priority, note = :note WHERE id = :id');
         $query->execute(array(
-            'id' => $this->id, 
+            'id' => (Int)$this->id, 
             'title' => $this->title, 
             'date_' => $this->date_, 
             'time_' => $this->time_, 

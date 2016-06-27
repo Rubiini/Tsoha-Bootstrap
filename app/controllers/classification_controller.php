@@ -8,6 +8,7 @@
 class ClassificationController extends BaseController {
 
     public static function classification() {
+        
         $classification = Classification::all();
         View::make('classification/class.html', array('classification' => $classification));
     }
@@ -59,7 +60,7 @@ class ClassificationController extends BaseController {
         } else {
             $classification->update();
 
-            Redirect::to('/classification' . $classification->id, array('message' => 'Classification has been edited successfully!'));
+            Redirect::to('/classification/' . $classification->id, array('message' => 'Classification has been edited successfully!'));
         }
     }
 

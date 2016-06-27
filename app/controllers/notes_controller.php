@@ -52,7 +52,6 @@ class NoteController extends BaseController {
 
     public static function update($id) {
         $params = $_POST;
-
         $attributes = array(
             'id' => $id,
             'title' => $params['title'],
@@ -72,7 +71,7 @@ class NoteController extends BaseController {
         } else {
             $note->update();
 
-            Redirect::to('/note' . $note->id, array('message' => 'Note has been edited successfully!'));
+            Redirect::to('/note/' . (Int)$id, array('message' => 'Note has been edited successfully!'));
         }
     }
 
